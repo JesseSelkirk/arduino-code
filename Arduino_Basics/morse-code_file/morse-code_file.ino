@@ -1,13 +1,14 @@
 const int kRedLED = 8;
 const int kButton = 5;
-const int kFreq = 1000;
-const int kUnit = 100;
+const int kFreq = 800;
+const int kUnit = 110;
 
 void setup() {
   // put your setup code here, to run once:
   pinMode(kRedLED, OUTPUT);
   pinMode(kButton, INPUT);
   digitalWrite(kButton, HIGH);
+  Serial.begin(9600);
 }
 
 void dit() {
@@ -40,22 +41,27 @@ void hello() {
   dit();
   dit();
   dit();
+  Serial.print("H");
   nLet();
   dit();
-  nLet();
-  dit();
-  dah();
-  dit();
-  dit();
+  Serial.print("E");
   nLet();
   dit();
   dah();
   dit();
   dit();
+  Serial.print("L");
+  nLet();
+  dit();
+  dah();
+  dit();
+  dit();
+  Serial.print("L");
   nLet();
   dah();
   dah();
   dah();
+  Serial.print("O");
 }
 
 void fraser() {
@@ -63,30 +69,38 @@ void fraser() {
   dit();
   dah();
   dit();
+  Serial.print("F");
   nLet();
   dit();
   dah();
   dit();
+  Serial.print("R");
   nLet();
   dit();
   dah();
+  Serial.print("A");
   nLet();
   dit();
   dit();
   dit();
+  Serial.print("S");
   nLet();
   dit();
+  Serial.print("E");
   nLet();
   dit();
   dah();
   dit();
+  Serial.print("R");
 }
 
 void loop() {
 
   hello();
+  Serial.print(" ");
   nWrd();
   fraser();
+  Serial.println(" ");
   nWrd();
   nWrd();
   /*
