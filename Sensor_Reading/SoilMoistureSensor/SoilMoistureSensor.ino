@@ -5,8 +5,8 @@
  * 300-600 means moist
  * 600-950 means the big wet
  */
-#define SensorPin A0
-float sensorValue = 0;
+#define MoistureSensorPin A0
+float MoistureSensorValue = 0;
 void setup() {
   Serial.begin(9600);
 }
@@ -14,10 +14,11 @@ void setup() {
 void loop() {
   for (int i = 0; i <= 100; i++)
   {
-    sensorValue = sensorValue + analogRead(SensorPin);
+    MoistureSensorValue = MoistureSensorValue + analogRead(MoistureSensorPin);
     delay(1);
   }
-  sensorValue = sensorValue/100.0;
-  Serial.println(sensorValue);
+  MoistureSensorValue = MoistureSensorValue/100.0;
+  Serial.print("Moisture Level: ");
+  Serial.println(MoistureSensorValue);
   delay(30);
 }
